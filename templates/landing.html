@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Renata Arrojo | Nutricionista</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="hero">
+        <h1>Renata Arrojo</h1>
+        <div class="divider"></div>
+        <h2>Nutricionista Clínica</h2>
+        <p class="subinfo">CRN2: 12778P</p>
+        <p class="subinfo">Atendimento presencial e online</p>
+        <p class="subinfo">WhatsApp: (51) 96839-9965</p>
+    </div>
+
+    <div class="form-box">
+
+        <h3>Formulário Pré-Consulta</h3>
+
+        <p class="descricao-form">
+        Este formulário me permite compreender sua rotina, objetivos e histórico antes da consulta,
+        garantindo um atendimento mais personalizado desde o primeiro encontro.
+        <br><br>
+        Todas as informações são confidenciais.
+        </p>
+
+        <form action="/submit" method="POST">
+
+            <div class="input-group">
+                <input type="text" name="nome" placeholder="Nome completo*" required>
+                <input type="date" name="data_nascimento" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" name="cidade_estado" placeholder="Cidade e Estado*" required>
+                <input type="text" name="whatsapp" placeholder="Número de WhatsApp*" required>
+            </div>
+
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Seu e-mail*" required>
+                <input type="text" name="cpf" placeholder="CPF*" required>
+            </div>
+
+            <input type="text" name="ocupacao" placeholder="Ocupação*" required>
+
+            <label>Objetivo principal*</label>
+            <select name="objetivo" required>
+                <option value="">Selecione</option>
+                <option>Hipertrofia</option>
+                <option>Emagrecimento</option>
+                <option>Melhora de hábitos alimentares</option>
+                <option>Vegetarianismo/Veganismo</option>
+                <option>Melhora no desempenho esportivo</option>
+                <option>Questões de saúde</option>
+                <option>Outro</option>
+            </select>
+
+            <input 
+                type="text" 
+                name="condicao_saude" 
+                placeholder="Caso aplicável, descreva questões de saúde (ex: Diabetes, Hipertensão...)"
+            >
+
+            <input type="text" name="atividade_fisica" placeholder="Atividade física praticada*" required>
+
+            <label>Modalidade*</label>
+            <select name="modalidade" required>
+                <option value="">Selecione</option>
+                <option>Presencial</option>
+                <option>Online</option>
+                <option>Híbrido</option>
+            </select>
+
+            <button type="submit">Enviar informações</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
